@@ -21,6 +21,7 @@ enjoy working with. What it does for you:
 
 - Some kind of form builder
 - Asset compilation & concatenation for production
+- Headless JavaScript spec runner from the command line
 
 ## What I don't like about it
 
@@ -40,9 +41,8 @@ enjoy working with. What it does for you:
 
 ## Run the tests
 
-Ruby: Uses Rspec, so just do `rspec spec`
-
-JavaScript: For Jasmine, start the server up and navigate to
+- Ruby: Uses Rspec, so just do `rspec spec`
+- JavaScript: Uses Jasmine, start the server up and navigate to
 `localhost:4567/test-js/SpecRunner.html`
 
 *Tested with: Ruby 1.9.3p0*
