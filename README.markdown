@@ -33,7 +33,10 @@ enjoy working with. What it does for you:
 1. Install dependencies: `bundle install`. Ensure you have a sqlite
 	 library installed that is compatible with DataMapper.
 2. Replace all occurrences of StarterApp with your app name.
-3. Build your thing.
+3. Start the app with `rake server` and navigate to `localhost:4567`
+4. Build your thing. You can use `rake server:auto_reload` to start
+   up Rack with Shotgun. This will automatically reload the app on each HTTP 
+   request.
 
 ## Run the tests
 
