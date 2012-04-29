@@ -1,4 +1,3 @@
 $ ->
-  new Caldo.Router
+  new StarterApp.Router
   Backbone.history.start({pushState: true})
-

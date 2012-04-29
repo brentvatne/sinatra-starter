@@ -1,7 +1,7 @@
 desc 'Start the application'
 
 task :server do
-  system "ruby -e \"require './app/bootstrap'; StarterApp::App.run!\""
+  system "bundle exec rackup -p 4567"
 end
 
 namespace :server do

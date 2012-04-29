@@ -66,5 +66,5 @@ Util =
     @shortDate moment(@parsableDate(date)).add('days', 1)
 
 
-@Caldo = window.Caldo || {}
-@Caldo.Util = Util
+@StarterApp = window.StarterApp || {}
+@StarterApp.Util = Util

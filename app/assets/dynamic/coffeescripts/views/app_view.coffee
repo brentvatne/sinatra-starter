@@ -1,76 +1,40 @@
 class AppView extends Backbone.View
-  id: 'caldo'
+  id: 'top-level-id-for-the-app-goes-here'
 
-  # Initialize the TodosView (using preload data if it exists, otherwise no), and 
-  # create collection bindings.
   initialize: ->
-    @date       = @options['date']
     preloadData = @options['preloadData']
 
-    @setDate(@date, silent: true)
     @render()
 
-    @collection.on 'reset', @showTodos, this
+    @collection.on 'reset', @doSomething, this
     @enableKeyboardScrolling()
-    new Caldo.TodosView(collection: @collection, app: this)
+
+    new StarterApp.SomeNestedView(collection: @collection, app: this)
     if preloadData then @collection.reset(preloadData) else @collection.fetch()
 
   events:
-    "click a.next-day":     "navigateToNextDay"
-    "click a.previous-day": "navigateToPreviousDay"
+    "click a.some-important-link ": "doAThing"
 
-  navigateToNextDay: (e) ->
+  doAThing: (e) ->
     e?.preventDefault()
-    Backbone.history.navigate(Caldo.Util.nextDate(@date))
-    @nextDay()
+    Backbone.history.navigate('some-new-path')
 
-  navigateToPreviousDay: (e) ->
+  doOtherThing: (e) ->
     e?.preventDefault()
-    Backbone.history.navigate(Caldo.Util.previousDate(@date))
-    @previousDay()
+    Backbone.history.navigate('some-other-path')
 
   enableKeyboardScrolling: ->
     $('body').keydown (e) =>
       switch e.keyCode
-        when 37 then @navigateToPreviousDay()
-        when 39 then @navigateToNextDay()
+        when 37 then @doAThing()
+        when 39 then @doOtherThing()
 
-  # Sets the current date of the AppView to the day after the current date
-  nextDay: ->
-    @setDate(Caldo.Util.nextDate(@date))
-
-  # Sets the current date of the AppView to the day before the current date
-  previousDay: ->
-    @setDate(Caldo.Util.previousDate(@date))
-
-  template: _.template($('#caldo-app-template').html())
+  template: _.template($('#sample-template').html())
 
   render: ->
     $('.wrap').empty()
     $('.wrap').append(@el)
-    @$el.append(@template(date: @date))
+    @$el.append(@template(a_variable: @date))
 
-  toggleTodoVisibility: ->
-    @$el.find('.todos-wrapper').fadeToggle()
-
-  showTodos: ->
-    @$el.fadeIn('fast')
-
-  hideTodos: (callback) ->
-    this.$el.fadeOut 'fast', =>
-      callback.call(this)
-
-  # Changes the date to the given date and cascades the change through
-  # to the Todos collection. Also triggers the transition events to
-  # change the given page.
-  setDate: (newDate, options = {}) ->
-    @date = newDate
-
-    unless options.silent
-      @hideTodos ->
-        this.$el.find('.date').html(Caldo.Util.humanDate(@date))
-        @collection.setDate(newDate)
-        @showTodos()
-
-@Caldo = window.Caldo || {}
-@Caldo.AppView = AppView
+@StarterApp = window.StarterApp || {}
+@StarterApp.AppView = AppView
