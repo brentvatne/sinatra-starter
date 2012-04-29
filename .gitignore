@@ -1,0 +1,16 @@
+.bundle
+db/*.sqlite3*
+log/*.log
+*.log
+/tmp/
+doc/
+*.swp
+*~
+.project
+.DS_Store
+db/app.db
+.sass-cache/
+.rvmrc
+spec/config/api_access.yaml
+config/api_credentials.rb
+.webbynode

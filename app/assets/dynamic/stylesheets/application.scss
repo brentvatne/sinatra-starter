@@ -1,0 +1,104 @@
+@import 'reset.scss';
+@import 'typography.scss';
+@import 'github_buttons.scss';
+@import 'notifications.scss';
+
+body {
+  h1 {
+    font-weight: 700;
+  }
+  ul {
+    list-style-type: none;
+  }
+
+  a, a:visited {
+    color: #0e7cc9;
+    &:hover {
+      color: #011e37;
+    }
+  }
+}
+
+.wrap {
+  width: 400px;
+  margin: 0 auto;
+  .minor-group {
+    .button {
+      border: none;
+    }
+  }
+}
+
+.control-bar {
+  padding-top: 10px;
+  text-align: right;
+  a, a:link, a:visited {
+    color: #383838;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #CCC;
+  }
+}
+
+#caldo {
+  text-align: center;
+  .todos {
+    width: 350px;
+    display: inline-block;
+
+    .todo {
+      text-align: left;
+			.todo-summary {
+				font-weight: 600;
+			}
+			.todo-date {
+        display: none;
+        color: #545454;
+			}
+			.todo-time {
+        color: #545454;
+			}
+      .todo-date-time {
+        width: 150px;
+        text-align: right;
+      }
+      &.important {
+        .todo-summary {
+          background-color: #fbfc95;
+        }
+        .todo-date {
+          display: inline;
+        }
+      }
+
+      &.complete {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .days-navigator {
+    position: relative;
+
+    .previous-day {
+      position: absolute;
+      left: 0px;
+    }
+    .next-day {
+      position: absolute;
+      right: 0px;
+    }
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 569px) {
+  h1 {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+  .wrap {
+    width: 300px !important;
+    padding: 0px 10px 0px 10px;
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Starter App</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='/stylesheets/application.css' rel='stylesheet' type='text/css'>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <% flash.each do |key, value| %>
+    <% unless value.nil? %>
+      <div class="notification <%= key %>">
+        <p class="message"><%= value %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="wrap">
+    <%= yield  %>
+  </div>
+
+  <script src='/javascripts/vendor/jquery.js'></script>
+  <script src='/javascripts/vendor/underscore.js'></script>
+  <script src='/javascripts/vendor/backbone.js'></script>
+  <script src='/javascripts/vendor/moment.js'></script>
+
+</body>
+</html>
