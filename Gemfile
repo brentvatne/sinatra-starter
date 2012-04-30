@@ -2,8 +2,8 @@ source "http://rubygems.org"
 
 # Sinatra and related gems
 gem 'sinatra', '~> 1.3.2'
+gem "padrino-helpers", "~> 0.10.6"
 gem 'shotgun', '~> 0.9'
-gem 'ratpack', '~> 0.1.3'
 gem 'sinatra-flash', '~> 0.3.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'

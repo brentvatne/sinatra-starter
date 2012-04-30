@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'sinatra/ratpack'
+require 'padrino-helpers'
 require 'sinatra/flash'
 require 'sass'
 require 'coffee-script'
@@ -9,6 +9,8 @@ module StarterApp
 
   # This portion of the app handles Sinatra configuration and asset serving.
   class App < Sinatra::Application
+    register Padrino::Helpers
+
     enable :sessions
     enable :logging
 

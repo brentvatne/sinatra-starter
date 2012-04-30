@@ -16,10 +16,11 @@ enjoy working with. What it does for you:
   Gallagher, and the 'Sea Farer' typography theme by Russ Maschmeyer
 - Rack-flash-enabled flash messages (was surprised to find that this is
   not a default in Sinatra)
+- Rails style view helpers (content_for, form builder, etc) with the
+  padrino-helpers gem.
 
 ## What I would like to see added
 
-- Some kind of form builder
 - Asset compilation & concatenation for production
 - Headless JavaScript spec runner from the command line
 
