@@ -41,57 +41,6 @@ body {
   }
 }
 
-#caldo {
-  text-align: center;
-  .todos {
-    width: 350px;
-    display: inline-block;
-
-    .todo {
-      text-align: left;
-			.todo-summary {
-				font-weight: 600;
-			}
-			.todo-date {
-        display: none;
-        color: #545454;
-			}
-			.todo-time {
-        color: #545454;
-			}
-      .todo-date-time {
-        width: 150px;
-        text-align: right;
-      }
-      &.important {
-        .todo-summary {
-          background-color: #fbfc95;
-        }
-        .todo-date {
-          display: inline;
-        }
-      }
-
-      &.complete {
-        opacity: 0.2;
-      }
-    }
-  }
-
-  .days-navigator {
-    position: relative;
-
-    .previous-day {
-      position: absolute;
-      left: 0px;
-    }
-    .next-day {
-      position: absolute;
-      right: 0px;
-    }
-  }
-}
-
 @media only screen and (min-device-width : 320px) and (max-device-width : 569px) {
   h1 {
     font-size: 24px;

@@ -2,7 +2,6 @@ require_relative '../app'
 
 module StarterApp
   class App < Sinatra::Application
-    attr_accessor :client, :calendar
 
     # Should deal with an edge case:
     # If the user does not have a refresh token, and no refresh
