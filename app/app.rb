@@ -11,7 +11,6 @@ module StarterApp
   class App < Sinatra::Application
     register Padrino::Helpers
 
-    enable :sessions
     enable :logging
 
     set :client_id,     StarterApp::GAPI_CLIENT_ID
