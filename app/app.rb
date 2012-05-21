@@ -50,6 +50,10 @@ module StarterApp
         template_file = File.join(settings.template_dir, relative_path + ".html")
         if File.exists?(template_file) then File.read(template_file) else "" end
       end
+
+      def json_params
+        @json_params ||= JSON.parse(request.body.read).symbolize_keys!
+      end
     end
 
     private
