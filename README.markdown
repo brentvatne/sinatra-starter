@@ -1,3 +1,7 @@
+# Warning!
+
+### This is very old and I have not touched it for a while. You probably do not want to use this.
+
 # Sinatra Starter App
 
 ## What is it
